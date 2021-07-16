@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="formos.html" method="POST">
+        <table>
+            <tr>
+                <td><label for="name">Vardas:</label></td>
+                <td><input class="data" type="text" id="name" name="name" maxlength="5" required autocomplete="off"></td>
+            </tr>
+            <tr>
+                <td><label for="surname">Pavardė:</label></td>
+                <td><input class="data" type="text" id="surname" name="surname"></td>
+            </tr>
+            <tr>
+                <td><label for="email">El. paštas:</label></td>
+                <td><input class="data" type="email" id="email" name="email"></td>
+            </tr>
+            <tr>            
+                <td><label for="phone">Telefonas:</label></td>
+                <td><input class="data" type="text" id="phone" name="phone"></td>
+            </tr>
+            <tr>            
+                <td><label for="password">Slaptas žodis:</label></td>
+                <td><input class="data" type="password" id="password" name="password"></td>
+            </tr>
+            <tr>
+                <td><label for="comment">Komentaras:</label></td>
+                <td><textarea name="comment" id="comment" cols="30" rows="10" maxlength="5"></textarea></td>
+            </tr>
+
+        </table>
+
+        <table>
+            <tr>
+                <td><input type="checkbox" name="language" id="english" value="en"></td>
+                <td><label for="">Anglų kalba</label></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="language" id="france" value="fr"></td>
+                <td><label for="">Prancūzų kalba</label></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="language" id="sweden" value="sv"></td>
+                <td><label for="">Švedų kalba</label></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="language" id="russian" value="ru"></td>
+                <td><label for="">Rusų kalba</label></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="language" id="samagotia" value="sa"></td>
+                <td><label for="">Žemaičių kalba</label></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td><label for="origin">Iš kur apie mus sužinojote?</label></td>
+                <td>
+                    <select name="origin" id="origin">
+                        <option value="0">...</option>
+                        <option value="1">Draugai</option>
+                        <option value="2">Facebook</option>
+                        <option value="3">Google</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Siųsti"></td>
+            </tr>
+        </table>
+    </form>
+
+
+</body>
+</html>
