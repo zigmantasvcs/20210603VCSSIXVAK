@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="menu.css">
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+
+        tr{
+
+        }
+        /* stilius keičiamas kas antram vaikiniam elementui, pradedant nuo antro */
+        tr:nth-child(2n+2){
+            background-color: silver;
+        }
+
+        tr:hover{
+            background-color: skyblue;
+        }
+
+        th, td{
+            padding: 5px;
+        }
+
+        th{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 14pt;
+            font-weight: bold;
+        }
+
+        #rent{
+            line-height: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="layout.html">Pagrindinis</a></li>
+        <li><a href="#">Paslaugos</a></li>
+        <li><a href="#">Susisiekite</a></li>
+        <li><a href="#">Partneriai</a></li>
+        <li><a href="gallery.html">Galerija</a></li>
+    </ul>
+
+    <h1>Paslaugos</h1>
+    <table>
+        <tr>
+            <th>Paslauga</th>
+            <th>Kaina</th>
+            <th>Aprašymas</th>
+        </tr>
+        <tr>
+            <td>Automobilių nuoma</td>
+            <td>50 EUR.</td>
+            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut itaque dignissimos deserunt modi adipisci laboriosam maxime unde consequuntur nisi, sequi praesentium blanditiis, quam, eveniet voluptate! Aut corporis cupiditate corrupti molestias!</td>
+        </tr>
+        <tr>
+            <td>Kemperių nuoma</td>
+            <td>150 EUR.</td>
+            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut itaque dignissimos deserunt modi adipisci laboriosam maxime unde consequuntur nisi, sequi praesentium blanditiis, quam, eveniet voluptate! Aut corporis cupiditate corrupti molestias!</td>
+        </tr>
+        <tr>
+            <td>Kačiukų nuoma</td>
+            <td>10 EUR.</td>
+            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut itaque dignissimos deserunt modi adipisci laboriosam maxime unde consequuntur nisi, sequi praesentium blanditiis, quam, eveniet voluptate! Aut corporis cupiditate corrupti molestias!</td>
+        </tr>
+        <tr>
+            <td>Šuniukų nuoma</td>
+            <td>15 EUR.</td>
+            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut itaque dignissimos deserunt modi adipisci laboriosam maxime unde consequuntur nisi, sequi praesentium blanditiis, quam, eveniet voluptate! Aut corporis cupiditate corrupti molestias!</td>
+        </tr>
+        <tr>
+            <td>Kambarių nuoma</td>
+            <td>60 EUR.</td>
+            <td id="rent">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut itaque dignissimos deserunt modi adipisci laboriosam maxime unde consequuntur nisi, sequi praesentium blanditiis, quam, eveniet voluptate! Aut corporis cupiditate corrupti molestias!</td>
+        </tr>
+    </table>
+
+
+    
+</body>
+</html>

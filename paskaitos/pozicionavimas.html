@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="menu.css">
+    <style>
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .item{
+            width: 30%;
+            /* overflow: hidden; naudojam kai netelpa turinys ir galime nukirpti dali turinio */
+        }
+
+        .photo{
+            margin: 5px;
+            /* border: 1px solid black; */
+            box-shadow: 2px 2px 5px silver;
+            border-top-right-radius: 25px;
+            overflow: hidden;
+        }
+
+        .item .photo .image img{
+            width: 100%;
+            /* display: none; */
+        }
+
+        .item .photo .description p{
+            padding: 10px;
+            text-align: center;
+        }
+
+
+        @media screen AND (orientation: portrait) AND (max-width: 600px){
+            .item{
+                width: 100%;
+            }
+        }
+
+        @media screen AND (min-width:1200px){
+            .item{
+                width: 25%;
+            }
+        }
+
+        #second{
+            position: relative;
+            top: 20px;
+        }
+/* 
+        #third{
+            position: absolute;
+        } */
+        .modal{
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="modal">
+        <div class="content">
+            turinys
+        </div>
+    </div>
+
+
+    <ul>
+        <li><a href="layout.html">Pagrindinis</a></li>
+        <li><a href="#">Paslaugos</a></li>
+        <li><a href="#">Susisiekite</a></li>
+        <li><a href="#">Partneriai</a></li>
+        <li><a href="gallery.html">Galerija</a></li>
+    </ul>
+
+    <h1>Galerija</h1>
+    <div class="container">
+
+        <div class="item" id="first">
+            <div class="photo">
+                <div class="image">
+                    <img src="https://picsum.photos/800/800?random=1" alt="">
+                </div>
+                <div class="description">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ipsa ea nobis enim beatae ex velit maxime odit qui maiores et facere temporibus nisi, voluptatum deserunt eos blanditiis. Quasi, ut.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="item" id="second">
+            <div class="photo">
+                <div class="image">
+                    <img src="https://picsum.photos/800/800?random=2" alt="">
+                </div>
+                <div class="description">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ipsa ea nobis enim beatae ex velit maxime odit qui maiores et facere temporibus nisi, voluptatum deserunt eos blanditiis. Quasi, ut.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="item" id="third">
+            <div class="photo">
+                <div class="image">
+                    <img src="https://picsum.photos/800/800?random=3" alt="">
+                </div>
+                <div class="description">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ipsa ea nobis enim beatae ex velit maxime odit qui maiores et facere temporibus nisi, voluptatum deserunt eos blanditiis. Quasi, ut.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="item" id="fourth">
+            <div class="photo">
+                <div class="image">
+                    <img src="https://picsum.photos/800/800?random=3" alt="">
+                </div>
+                <div class="description">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ipsa ea nobis enim beatae ex velit maxime odit qui maiores et facere temporibus nisi, voluptatum deserunt eos blanditiis. Quasi, ut.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
