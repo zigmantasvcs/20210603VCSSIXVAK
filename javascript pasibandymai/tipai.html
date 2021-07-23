@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul></ul>
+    <ol></ol>
+    
+    <script>
+
+        // concat operacija
+        let name = "Onutė";
+        let surname = "Pakalnutė";
+        let connectedString = name.concat(" ", surname, ". ", "Labas!");
+        console.log(connectedString);
+        
+        // + operacija
+        connectedString = name + " " + surname + ". " + "Labas!";
+        console.log(connectedString);
+
+        // indexOf
+        let text = "Laba diena, graži diena.";
+        let position = text.indexOf(",");
+        console.log(text[position]);
+
+        let positionDoesNotExist = text.indexOf("!");
+        console.log(positionDoesNotExist);
+
+        // substring iskerpa gabala teksto is kito teksto
+        let cutString = text.substring(0, position);
+        console.log(cutString);
+
+        let endOfText = text.substring(position+1, text.length);
+        console.log(endOfText);
+
+
+        // split skaidymas
+        console.log(text.split(" "));
+
+        let items = "Duona,Pienas,Agurkai,Pomidorai,Riešutai";
+        console.log(items);
+        console.log(items.split(","));
+        let itemsArray = items.split(","); 
+
+        let listElement = document.querySelector("ul");
+
+        for (let index = 0; index < itemsArray.length; index++) {
+            const item = itemsArray[index];
+
+            let li = document.createElement("li"); // sukuria <li></li>
+            li.innerHTML = item; // iterpia turini i elementa li, gauname pvz. <li>Duona</li>
+
+            listElement.appendChild(li); // pridedame is kompiuterio atminties sukurta saraso elementa
+        }
+
+        // antras budas kaip uzpildyti sarasa
+        let listElementOl = document.querySelector("ol");
+        let listElements = "";
+        for (let index = 0; index < itemsArray.length; index++) {
+            const item = itemsArray[index];
+
+            listElements += "<li>" + item + "</li>";
+        }
+        listElementOl.innerHTML = listElements;
+
+
+        // boolean
+        if(5 > 4){
+            alert('tiesa');
+        }
+        else{
+            alert('netiesa');
+        }
+
+        let age = prompt("Kiek jums metu?");
+
+        if(age > 18){
+            alert('Uzeikite');
+        }
+        else{
+            alert('Paaukite');
+        }
+
+    </script>
+</body>
+</html>

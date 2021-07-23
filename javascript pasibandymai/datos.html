@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let weekdays = [
+            "Sekmdienis", 
+            "Pirmadienis", 
+            "Antradienis", 
+            "Trečiadienis", 
+            "Ketvirtadienis", 
+            "Penktadienis",
+            "Šeštadienis"
+        ];
+
+        let dateObject = new Date();
+        console.log(dateObject.getDay());
+        console.log(dateObject.getDate());
+        console.log(dateObject.getFullYear());
+        console.log(dateObject.getMonth());
+
+        let currentWeekDayInNumber = dateObject.getDay();
+        let currentWeekDayInString = weekdays[currentWeekDayInNumber];
+        console.log(currentWeekDayInString);
+
+        // join array
+
+        let weekdaysInString = weekdays.join(",");
+        console.log(weekdaysInString);
+        console.log(weekdays);
+
+    </script>
+</body>
+</html>

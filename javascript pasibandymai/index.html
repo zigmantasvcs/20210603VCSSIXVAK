@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="firstNumber">
+    +
+    <input type="text" id="secondNumber">
+    <input type="button" value="=" id="calc">
+    <label for="" id="result">?</label>
+
+    <script src="library.js"></script>
+    <script>
+        let name = "Onutė"; // tipas string
+        console.log(name);
+
+        let age = 18; // tipas Number
+        console.log(age);
+
+        let weight = 50.9; // tipas Number
+        console.log(weight);
+
+        // skirtingi tipai
+        let a = "5";
+        let b = 6;
+        let sum = a + b;
+        console.log(sum);
+        
+        // iskvieciam funkcija kuri grazins suma
+        let suma = sum1(a, b);
+        console.log(suma);
+
+        // kvieciam funkcija su skaiciais
+        let suma1 = sum1(15, 20);
+        console.log(suma1);
+
+        // kvieciam funkcija su skaiciais
+        let suma2 = sum2(100, 200);
+        console.log(suma2);
+
+        // kvieciam funkcija su skaiciais
+        let suma3 = sum3(200, 200);
+        console.log(suma3);
+
+        // apsirasome paspaudimo ivyki
+        let button = document.querySelector("#calc");
+        button.addEventListener("click", function(){
+            
+            let firstInputElement = document.querySelector("#firstNumber");
+            let secondInputElement = document.querySelector("#secondNumber");
+
+            if(isNaN(firstInputElement.value)){
+                alert("Įvestas ne skaičius pirmame laukelyje.");
+                return;
+            }
+
+            if(isNaN(secondInputElement.value)){
+                alert("Įvestas ne skaičius antrame laukelyje.");
+                return;
+            }
+
+            let firstValue = Number(firstInputElement.value);
+            let secondValue = Number(secondInputElement.value);
+            let resultElement = document.querySelector("#result");
+
+            showSum(firstValue, secondValue, resultElement);
+            
+        })
+
+        let class = "aaa";
+    </script>
+</body>
+</html>
