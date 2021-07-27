@@ -16,10 +16,7 @@
             z-index: 9999;
         }
         
-        .slider {
-            height: 90vh!important;
-        }
-        
+
         #services,
         #contacts {
             min-height: 100vh;
@@ -45,7 +42,7 @@
 
     <ul class="sidenav" id="mobile-demo">
         <li><a href="index.html">Pagrindinis</a></li>
-        <li><a href="#services">Paslaugos</a></li>
+        <li><a services>Paslaugos</a></li>
         <li><a href="#contacts">Kontaktai</a></li>
     </ul>
     <!-- navbar pabaiga -->
@@ -220,6 +217,7 @@
 
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="js/library.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.sidenav');
@@ -230,7 +228,7 @@
             var elems = document.querySelectorAll('.slider');
             var instances = M.Slider.init(elems, {
                 height: window.innerHeight - 64,
-                indicators: true
+                indicators: false
             });
         });
 
@@ -238,6 +236,10 @@
             var elems = document.querySelectorAll('.parallax');
             var instances = M.Parallax.init(elems, {});
         });
+
+        doScroll("services");
+        doScroll("contacts");
+
     </script>
 </body>
 

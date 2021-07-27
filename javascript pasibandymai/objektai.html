@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+
+    </div>
+
+    <div class="card">
+
+    </div>
+    
+    <script src="library.js"></script>
+    <script>
+        // pats paprasciausias objektas
+        let student = {
+            name: "Jonas",
+            surname: "Jonaitis",
+            age: 18,
+            weight: 70,
+            photo: "https://picsum.photos/200/200?random=1"
+        };
+        
+        let student2 = {
+            name: "Onutė",
+            surname: "Pakalnutė",
+            age: 18,
+            weight: 60,
+            photo: "https://picsum.photos/200/200?random=2"
+        };
+        // console.log(student);
+        // console.log(student.name);
+
+        printPersonToCard3(student, document.querySelectorAll(".card")[0]);
+        printPersonToCard3(student2, document.querySelectorAll(".card")[1]);
+
+        
+
+    </script>
+</body>
+</html>

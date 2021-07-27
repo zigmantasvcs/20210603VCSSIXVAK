@@ -55,6 +55,16 @@
             position: relative;
             top: 20px;
         }
+
+        .modal .content img{
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0;}
+            to { opacity: 1;}
+        }
+        
 /* 
         #third{
             position: absolute;
@@ -72,62 +82,91 @@
     </div>
 
 
+    <div>
+        <select id="languageChanger">
+            <option value="en">en</option>
+            <option value="lt">lt</option>
+        </select>
+    </div>
+
+
     <ul>
-        <li><a href="layout.html">Pagrindinis</a></li>
-        <li><a href="#">Paslaugos</a></li>
-        <li><a href="#">Susisiekite</a></li>
-        <li><a href="#">Partneriai</a></li>
-        <li><a href="gallery.html">Galerija</a></li>
+        <li><a href="layout.html" translate-menu-main>Pagrindinis</a></li>
+        <li><a href="#" translate-menu-services>Paslaugos</a></li>
+        <li><a href="#" translate-menu-contact>Susisiekite</a></li>
+        <li><a href="#" translate-menu-partners>Partneriai</a></li>
+        <li><a href="gallery.html" translate-menu-gallery>Galerija</a></li>
     </ul>
 
     <h1>Galerija</h1>
     <div class="container">
-
-        <div class="item" id="first">
-            <div class="photo">
-                <div class="image">
-                    <img src="https://picsum.photos/800/800?random=1" alt="">
-                </div>
-                <div class="description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ipsa ea nobis enim beatae ex velit maxime odit qui maiores et facere temporibus nisi, voluptatum deserunt eos blanditiis. Quasi, ut.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="item" id="second">
-            <div class="photo">
-                <div class="image">
-                    <img src="https://picsum.photos/800/800?random=2" alt="">
-                </div>
-                <div class="description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ipsa ea nobis enim beatae ex velit maxime odit qui maiores et facere temporibus nisi, voluptatum deserunt eos blanditiis. Quasi, ut.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="item" id="third">
-            <div class="photo">
-                <div class="image">
-                    <img src="https://picsum.photos/800/800?random=3" alt="">
-                </div>
-                <div class="description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ipsa ea nobis enim beatae ex velit maxime odit qui maiores et facere temporibus nisi, voluptatum deserunt eos blanditiis. Quasi, ut.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="item" id="fourth">
-            <div class="photo">
-                <div class="image">
-                    <img src="https://picsum.photos/800/800?random=3" alt="">
-                </div>
-                <div class="description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ipsa ea nobis enim beatae ex velit maxime odit qui maiores et facere temporibus nisi, voluptatum deserunt eos blanditiis. Quasi, ut.</p>
-                </div>
-            </div>
-        </div>
-
     </div>
+
+    <script src="js/pozicionavimasTranslation.js"></script>
+    <script src="js/data.js"></script>
+    <script>
+        // atvaizdavimas galerijos
+        placeItems(document.querySelector(".container"));
+
+        // darbas su modal
+        let imgs = document.querySelectorAll("img");
+
+        let modal = document.querySelector(".modal");
+
+        // ciklas atsakingas uz kievieno paveiksliuko parodyma paspaudus
+        for (let index = 0; index < imgs.length; index++) {
+            const image = imgs[index];
+
+            image.addEventListener("click", function(){
+                
+                let modalContent = document.querySelector(".modal .content");
+                modalContent.innerHTML = "";
+
+                //modalContent.appendChild(image); // ivyksta perkelimas
+
+                let newImage = "<img src='"+image.getAttribute("src")+"'>";
+
+                modalContent.innerHTML = newImage;
+                
+                modal.setAttribute("style", "display:flex");
+            });
+        }
+
+        modal.addEventListener("click", function(){
+            // uzdaryti modal
+            modal.setAttribute("style", "display:none");
+        })
+
+
+        // darbas su kalbos keitikliu
+        // pasiimame local storage objekta
+        let localStorage = window.localStorage;
+
+        // bandome pasiimti galbut anksciau issaugota lang rakto(lauko) reiksme
+        let lang = localStorage.getItem("lang");
+
+        if(!lang){
+            lang = document.querySelector("#languageChanger").value;
+        }
+        else{
+            document.querySelector("#languageChanger").value = lang;
+        }
+
+        doTranslations(lang);
+
+        document.querySelector("#languageChanger").addEventListener("change", function(){
+
+            doTranslations(this.value);
+
+            localStorage.setItem("lang", this.value)
+        });
+
+
+
+
+        //console.log(lang);
+
+    </script>
 </body>
 
 </html>

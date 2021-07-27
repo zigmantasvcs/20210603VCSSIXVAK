@@ -7,8 +7,12 @@
     <title>Document</title>
 </head>
 <body>
+    <input type="button" name="" id="sort" value="Rikiuoti pagal abėcėlę">
+    <input type="button" name="" id="sortDescending" value="Rikiuoti prieš abėcėlę">
+    <input type="button" id="removeOne" value="Pasalinti vieną elementą">
     <ul></ul>
 
+    <script src="library.js"></script>
     <script>
         let peopleGroup1 = ["Jonas", "Petras", "Kazys"];
         let peopleGroup2 = ["Onutė", "Marytė", "Zosytė"];
@@ -23,20 +27,32 @@
         console.log(peopleGroup1);
 
         let allPeople = peopleGroup1.concat(peopleGroup2);
-        showPeople(peopleGroup1);
+        let ul = document.querySelector("ul");
+        showPeople(allPeople, ul);
 
 
-        function showPeople(array) {
-            let ul = document.querySelector("ul");
+        let sortButton = document.querySelector("#sort");
+        sortButton.addEventListener("click", function(){
+            allPeople.sort();
+            showPeople(allPeople, ul);
+        });
 
-            let liElements = "";
-            for (let index = 0; index < array.length; index++) {
-                const item = array[index];
-                
-                liElements += "<li>" + item + "</li>";
-            }
-            ul.innerHTML = liElements;
-        }
+        let sortDescendingButton = document.querySelector("#sortDescending");
+        sortDescendingButton.addEventListener("click", function(){
+            allPeople.sort();
+            allPeople.reverse();
+            showPeople(allPeople, ul);
+        });
+
+
+        let removeButton = document.querySelector("#removeOne");
+        removeButton.addEventListener("click", function(){
+            allPeople.shift();
+            showPeople(allPeople, ul);
+        });
+
+
+
 
     </script>
 </body>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .messages{
+            display: block;
+            visibility: hidden;
+            height: 20px;
+        }
+        .error-messages{
+            display: block;
+            color: red;
+            height: 20px;
+        }
+        .success-messages{
+            display: block;
+            color: green;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="messages"></div>
+    <table>
+        <thead>
+            <tr>
+                <td>
+                    <input type="button" id="add" value="+">
+                </td>
+                <td>
+                    <input type="text" id="name" autocomplete="off">
+                </td>
+                <td>
+                    <input type="text" id="surname" autocomplete="off">
+                </td>
+                <td>
+                    <input type="text" id="age" autocomplete="off">
+                </td>
+            </tr>
+            <tr>
+                <th>#</th>
+                <th>Vardas</th>
+                <th>Pavardė</th>
+                <th>Amžius</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    
+    <script>
+        let students = [
+            {
+                name: "Jonas",
+                surname: "Jonaitis",
+                age: 18
+            },
+            {
+                name: "Onutė",
+                surname: "Pakalnutė",
+                age: 20
+            },
+            {
+                name: "Petras",
+                surname: "Petraitis",
+                age: 21
+            },
+            {
+                name: "Marytė",
+                surname: "Pamarytė",
+                age: 22
+            }
+        ];
+
+        printPeopleListToTable(students, document.querySelector("table tbody"));
+
+        let addButton = document.querySelector("#add");
+        addButton.addEventListener("click", function(){
+            let name = document.querySelector("#name").value;
+            let surname = document.querySelector("#surname").value;
+            let age = document.querySelector("#age").value;
+
+
+            let person = {
+                name: name,
+                surname: surname,
+                age: age
+            };
+
+            if(doesPersonExistInArray(students, person)){
+                let messageElement = document.querySelector(".messages");
+                messageElement.innerText = "Toks asmuo jau yra!";
+                messageElement.setAttribute("class", "error-messages");
+                return;
+            }
+
+            students.push(person);
+            printPeopleListToTable(students, document.querySelector("table tbody"));
+            let messageElement = document.querySelector(".messages");
+            messageElement.innerText = "Valio!";
+            messageElement.setAttribute("class", "success-messages");
+        });
+
+
+        function printPeopleListToTable(people, tableElement){
+            tableElement.innerHTML = "";
+            for (let index = 0; index < people.length; index++) {
+                const person = people[index]; // person jau yra vienas objektas
+
+                let tr = createTableRowForFourColumns(person);
+
+                tableElement.appendChild(tr);
+            }
+
+        }
+
+        function createTableRowForFourColumns(person){
+            let tr = document.createElement("tr");
+
+            tr.innerHTML = "<td>1</td><td>"+person.name+"</td><td>"+person.surname+"</td><td>"+person.age+"</td>";
+
+            return tr;
+        }
+
+        function doesPersonExistInArray(people, person){
+            for (let index = 0; index < people.length; index++) {
+                const existingPersonInArray = people[index];
+
+                if(existingPersonInArray.name == person.name 
+                    && existingPersonInArray.surname == person.surname
+                    && existingPersonInArray.age == person.age){
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+    </script>
+</body>
+</html>
