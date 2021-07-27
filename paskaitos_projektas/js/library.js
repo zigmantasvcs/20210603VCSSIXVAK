@@ -5,7 +5,7 @@ function doScroll(id){
 }
 
 function scrollsTo(elementId){
-    var yourHeight = 0.1;
+    var yourHeight = 64;
 
     document.querySelector("#"+elementId).scrollIntoView(true);
 
