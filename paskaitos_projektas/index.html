@@ -32,18 +32,32 @@
 
         /* viskas kas yra po nav yra idedama i div elementa ir siektiek pastumiama zemyn 64px, nes navbar padarius
         position fixed visas turinys pasislenka i meniu vieta */
-        .custom-container{
+        /* .custom-container{
             position: relative!important;
             top: 64px!important;
+        } */
+
+        .languageChanger{
+            display: inline-block!important;
+            width: 50px;
+            height: 20px;
+            padding: 0px;
         }
     </style>
 </head>
 
 <body>
+    <div>
+        <select name="" id="" class="languageChanger">
+            <option value="en">en</option>
+            <option value="lt">lt</option>
+        </select>
+    </div>
+
     <!-- kodas rasysis cia -->
 
     <!-- navbar pradzia -->
-    <nav class="deep-purple darken-3 sticky">
+    <nav class="deep-purple darken-3">
         <div class="nav-wrapper">
             <a href="#!" class="brand-logo">Logo</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
